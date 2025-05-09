@@ -1,0 +1,6 @@
+# ignore python dev files
+__pycache__/*
+
+# any user files
+export/*
+import/*
