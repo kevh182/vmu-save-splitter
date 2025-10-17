@@ -1,6 +1,6 @@
-from constants import block_size
+from .constants import block_size
 from typing import List
-from root_block import RootBlock
+from .root_block import RootBlock
 
 free_block = bytearray(b'\xfc\xff')
 end_of_file = bytearray(b'\xfa\xff')
@@ -37,7 +37,6 @@ class FatBlock:
         blocks = []
         fat_size = self.start - self.end
         for i in range(0, fat_size):
-            print(i)
             blocks.append(self.data[i * block_size:(i+1)*block_size])
         return blocks
     

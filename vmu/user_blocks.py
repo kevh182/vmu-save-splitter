@@ -1,4 +1,4 @@
-from root_block import RootBlock
+from .root_block import RootBlock
 from typing import List
 
 class UserBlocks:

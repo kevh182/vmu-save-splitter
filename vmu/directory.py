@@ -1,5 +1,5 @@
-from directory_entry import DirectoryEntry
-from constants import block_size
+from .directory_entry import DirectoryEntry
+from .constants import block_size
 
 directory_entry_size = 32
 zero_byte_array = bytearray(directory_entry_size)
@@ -45,6 +45,17 @@ class Directory:
         return blocks
             
      
+    def files(self) -> list[DirectoryEntry]:
+        entries = self.entries
+
+        files = []
+        for entry in entries:
+            if entry != zero_byte_array:
+                entry_object = DirectoryEntry(entry)
+                files.append(entry_object)
+
+        return files
+
     def list(self):
         entries = self.entries
 

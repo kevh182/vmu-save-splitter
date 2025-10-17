@@ -1,16 +1,16 @@
-from root_block import RootBlock
-from fat_block import FatBlock
-from directory import Directory
-from directory_entry import DirectoryEntry
-from vmu_file import VmuFile
-from user_blocks import UserBlocks
-from constants import block_size
+from .root_block import RootBlock
+from .fat_block import FatBlock
+from .directory import Directory
+from .directory_entry import DirectoryEntry
+from .vmu_file import VmuFile
+from .user_blocks import UserBlocks
+from .constants import block_size
 import copy
 
 class Vmu:
     def __init__(self, file):
         self.blocks = []
-        with open("./import/" + file, "rb") as f:
+        with open(file, "rb") as f:
             while True:
                 chunk = f.read(block_size)
                 if not chunk:
@@ -75,7 +75,7 @@ class Vmu:
         return data
 
     def save_vmu(self, file):
-        with open("./export/" + file, "wb") as f:
+        with open(file, "wb") as f:
             f.write(self.build_vmu())
 
         print("Saved to " + file)

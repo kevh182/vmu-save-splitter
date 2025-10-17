@@ -1,5 +1,7 @@
 # ignore python dev files
 __pycache__/*
+vmu/__pycache__/*
+dbs/__pycache__/*
 
 # any user files
 export/*
