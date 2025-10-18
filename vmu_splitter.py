@@ -87,6 +87,7 @@ def format_game_id(game_id: str):
 
 def split_files(vmu: Vmu):
     new_vmus = {}
+    matched_ids = []
     for file in vmu.directory.files():
         if (file.file_name == "ICONDATA_VMS"):
              continue
@@ -110,11 +111,15 @@ def split_files(vmu: Vmu):
                     }
 
         elif(len(matches) == 1):
-                matched_game = matches[0]
+            matched_game = matches[0]
         else:
-            matched_game = match_game(matches, file.file_name)
+            for match in matches:
+                 if(match["game_id"] in matched_ids):
+                      matched_game = match
+            matched_game = matched_game if matched_game else match_game(matches, file.file_name)
 
         if (matched_game):
+            matched_ids.append(matched_game["game_id"])
             game_id = matched_game["fmid"] if loader == "disc" else format_game_id(matched_game["game_id"])
             print(f'Matched {matched_game["title"]} ({matched_game["region"]}): {game_id}')
             current_file = vmu.get_file(file.index)
@@ -185,5 +190,4 @@ vmuList =Path(import_dir).glob("*.vmu")
 
 for vmu in vmuList:
     currentVmu = Vmu(str(vmu))
-    currentVmu.list()
     split_files(currentVmu)
