@@ -6,3 +6,6 @@ dbs/__pycache__/*
 # any user files
 export/*
 import/*
+
+!generated\ vmu\ files\ will\ appear\ here
+!place\ files\ to\ import\ here
