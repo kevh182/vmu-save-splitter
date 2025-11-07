@@ -79,6 +79,7 @@ COMICPARTY00,Comic Party,T38301M���,Japan,T38301M
 CONFLICT.???,Conflict Zone,T46604D���,Europe,T40214D50
 CONFLICT.???,Conflict Zone,T17721N���,USA,T46603D50
 COOLCOOL.???,Cool Cool Toon,T3106M����,Japan,T3106M
+COSMIC_SMASH,Cosmic Smash,HDR-0176��,Japan,HDR0176
 CRAZYTAXI_DC,Crazy Taxi,MK-51035��,Europe,MK5103550
 CRAZYTAXI_DC,Crazy Taxi,HDR-0053��,Japan,MK5103550
 CRAZYTAXI_DC,Crazy Taxi,MK-51035��,USA,MK5103550
@@ -101,6 +102,7 @@ DAYTONA__???,Daytona USA 2001,HDR-0106��,Japan,MK51037
 ADV_DAI1.ADW,Advanced Daisenryaku 2001,HDR-0158��,Japan,HDR0158
 ADV_DAI1.ADW,Advanced Daisenryaku: Sturm �ber Europa: Der Deutsche Blitzkrieg,HDR-0066��,Japan,HDR0066
 DDR_CLUB.???,Dance Dance Revolution: Club Version: Dreamcast Edition,T9508M����,Japan,T9508M
+DDR2NDMX.SYS,Dance Dance Revolution 2nd Mix: Dreamcast Edition,T9506M����,Japan,T9506M
 DEATHCROXSYS,Death Crimson OX,T23202M���,Japan,
 DEATHCROXSYS,Death Crimson OX,T2401N����,USA,
 DEEPFITE.000,Deep Fighter,T17704D�05,Europe,T17704D61A
@@ -123,6 +125,8 @@ WDWORLDQ_MRT,Walt Disney World Quest: Magical Racing Tour,T36804N���,USA,T
 DEADORALIVE2,Dead or Alive 2,T8116D��50,Europe,T8116D50
 DOA2DATA_JPN,Dead or Alive 2,T3602M����,Japan,T8116D50
 DEADORALIVE2,Dead or Alive 2,T3601N����,USA,T8116D50
+DOA2DATA_U??,Dead or Alive 2,T8116D��50,Europe,T8116D50
+DOA2DATA_U??,Dead or Alive 2,T3601N����,USA,T8116D50
 DONALD_Q.???,Disney's Donald Duck: Goin' Quackers,T17714D50�,Any,T17719N
 DORAEMON_002,Boku Doraemon,T41802M���,Japan,T41802M
 PASSPORT.???,Dream Passport 3,6107819���,Japan,
@@ -253,20 +257,20 @@ JETGRIND_???,Jet Grind Radio,MK-51058��,USA,MK51058
 JETRADIO_???,Jet Set Radio,MK-5105850,Europe,MK5105850
 JETRADIO_???,Jet Set Radio,HDR-0078��,Japan,HDR0078
 POWERJET.???,Power Jet Racing 2001,T6806M����,Japan,T6803M
-JETSETDX_SYS,De La Jet Set Radio,HDR-0128��,Japan,HDR0186
-JOJO_ADV_SYS,Jojo no Kimyou na Bouken: Mirai e no Isan,T1205M����,Japan,T7007D50
-JOJO_ADV_SYS,JoJo's Bizarre Adventure,T7007D��50,Europe,T7007D50
-JOJO_ADV_SYS,JoJo's Bizarre Adventure,T1206N����,USA,T7007D50
+JETSETDX_???,De La Jet Set Radio,HDR-0128��,Japan,HDR0186
+JOJO_ADV_???,Jojo no Kimyou na Bouken: Mirai e no Isan,T1205M����,Japan,T7007D50
+JOJO_ADV_???,JoJo's Bizarre Adventure,T7007D��50,Europe,T7007D50
+JOJO_ADV_???,JoJo's Bizarre Adventure,T1206N����,USA,T7007D50
 JULY0000_???,July,T35401M���,Japan,
 KANON___.???,Kanon,T20105M���,Japan,T20105M
 KAO_KANG.???,Kao the Kangaroo,T22902D�50,Europe,T22902D50
 KAO_KANG.???,Kao the Kangaroo,T22903N���,USA,T22902D50
 TRMR_KPC.???,KISS Psycho Circus: The Nightmare Child,T40506D�50,Europe,T40506D50
 TRMR_KPC.???,KISS Psycho Circus: The Nightmare Child,T41901N���,USA,T40506D50
-KOF2000_0000,The King of Fighters 2000,T47303M���,Japan,T47303M
-KOF2001_0000,The King of Fighters 2001,T47304M���,Japan,T47304M
-KOF2002_0000,The King of Fighters 2002,T47305M���,Japan,T47305M
-KOF1999_0000,The King of Fighters: Dream Match 1999,T3101M����,Japan,T3101M
+KOF2000_0???,The King of Fighters 2000,T47303M���,Japan,T47303M
+KOF2001_0???,The King of Fighters 2001,T47304M���,Japan,T47304M
+KOF2002_0???,The King of Fighters 2002,T47305M���,Japan,T47305M
+KOF1999_0???,The King of Fighters: Dream Match 1999,T3101M����,Japan,T3101M
 KOF_1999.???,The King of Fighters: Dream Match 1999,T3101M����,Japan,T3101M
 KOF_1999.???,The King of Fighters: Dream Match 1999,T3101N����,USA,T3101M
 KOF_EVOL.???,The King of Fighters: Evolution,T44302N���,USA,
@@ -275,6 +279,7 @@ LANGMILL.???,Langrisser Millennium,T2501M����,Japan,T2501M
 GEKKANOKENSI,Bakumatsu Roman Daini Maku: Gekka no Kenshi: Final Edition,T3107M����,Japan,T3107M
 GEKKANOKENSI,The Last Blade 2: Heart of the Samurai,T44305N���,USA,
 SLREAVER.001,Legacy of Kain: Soul Reaver,T36802N���,Any,T36803D06
+LACKOFLOVE??,L.O.L.: Lack of Love,T2106M����,Japan,
 TDLEMANS.???,Test Drive Le Mans,T15123N���,USA,T15111D50
 LEMANS24.???,Le Mans 24 Hours,T15111D�50,Europe,T15111D50
 LEMANS24.???,Le Mans 24 Hours,HDR-0149��,Japan,T15111D50
@@ -389,6 +394,10 @@ PRISMATIC000,Prismaticallization,T22002M���,Japan,
 MJUSTICE_???,Moero! Justice Gakuen,T1221M����,Japan,T1221M
 PJUSTICE_???,Project Justice,T1219N����,USA,T1219N
 PJUSTICE_???,Project Justice: Rival Schools 2,T7022D��50,Europe,T1219N
+POPNMUSIC_??,Pop'n Music,T9501M����,Japan,T9501M
+P_MUSIC2.???,Pop'n Music 2,T9590M����,Japan,T9501M
+P_MUSIC3.???,Pop'n Music 3: Append Disc,T9591M����,Japan,T9501M
+P_MUSIC4.???,Pop'n Music 4: Append Disc,T9592M����,Japan,T9501M
 PROPARNA.???,Propeller Arena,MK-51162��,USA,
 PSO______???,Phantasy Star Online,MK-5110050,Europe,MK5110050
 PSO______???,Phantasy Star Online,HDR-0129��,Japan,MK5110050
@@ -437,11 +446,12 @@ RESEVIL3.???,Resident Evil 3: Nemesis,T7021D��72,Europe,T7021D05
 RESEVIL3.???,Resident Evil 3: Nemesis,T7021D��18,Germany,T7021D05
 RESEVIL3.???,Resident Evil 3: Nemesis,T1220N����,USA,T7021D05
 VERONICA.???,Biohazard: Code: Veronica,T1207M����,Japan,T1207M
-RE_CV000.???,Resident Evil: Code: Veronica,T36806D�05,Europe,T1204N
-RE_CV000.???,Resident Evil: Code: Veronica,T36806D�09,France,T1204N
-RE_CV000.???,Resident Evil: Code: Veronica,T36806D�18,Germany,T1204N
-RE_CV000.???,Resident Evil: Code: Veronica,T36806D�06,Spain,T1204N
-RE_CV000.???,Resident Evil: Code: Veronica,T1204N����,USA,T1204N
+RE_CV-X?????,Resident Evil: Code: Veronica,T1204N����,USA,T1204N
+RE_CV00?.???,Resident Evil: Code: Veronica,T36806D�05,Europe,T1204N
+RE_CV00?.???,Resident Evil: Code: Veronica,T36806D�09,France,T1204N
+RE_CV00?.???,Resident Evil: Code: Veronica,T36806D�18,Germany,T1204N
+RE_CV00?.???,Resident Evil: Code: Veronica,T36806D�06,Spain,T1204N
+RE_CV00?.???,Resident Evil: Code: Veronica,T1204N����,USA,T1204N
 REVIVE___SYS,Revive,T1301M����,Japan,T1301M
 REVOLTDC.???,Re-Volt,T8107D��50,Europe,T8107D50
 REVOLTDC.???,Re-Volt,T-8101M���,Japan,T8107D50
@@ -485,6 +495,7 @@ RAYBLADE_001,Seireiki Rayblade,T42201M���,Japan,
 SHADOMAN.???,Shadow Man,T8104D��58,Europe,T8104D50
 SHADOMAN.???,Shadow Man,T8104D��18,Germany,T8104D50
 SHADOMAN.???,Shadow Man,T-8106N���,USA,T8104D50
+SHANGDYN_???,Shanghai: Dynasty,T9902M����,Japan,T9902M
 SHENMUE1_???,Shenmue,MK-5105950,Europe,830020550
 SHENMUE1_???,Shenmue,MK-51059��,USA,830020550
 SHENMUE1_???,Shenmue: Isshou Yokosuka,HDR-0016��,Japan,HDR0031
@@ -620,6 +631,7 @@ TONYHWK2.???,Tony Hawk's Pro Skater 2,T13008D�18,Germany,T13008D05
 TONYHWK2.???,Tony Hawk's Pro Skater 2,T13006N���,USA,T13008D05
 TOY_COMM.???,Toy Commander,MK-5102050,Europe,MK5102050
 TOY_COMM.???,Toy Commander,MK-57020��,USA,MK5102050
+TOYRACER.???,Toy Racer,MK-5114950,Europe,MK5114950
 TOYS2DAT.???,Disney/Pixar Toy Story 2: Buzz l'Eclair � la Rescousse !,T13003D�09,France,T13003D09
 TOYS2DAT.???,Disney/Pixar Toy Story 2: Buzz Lightyear eilt zur Hilfe!,T13003D�18,Germany,T13003D09
 TOYS2DAT.???,Disney/Pixar Toy Story 2: Buzz Lightyear to the Rescue!,T13003D�05,Europe,T13003D09
@@ -680,6 +692,7 @@ WWFATUDE.???,WWF Attitude,T-8103N���,USA,T8103D50
 ROYAL_RUMBLE,WWF Royal Rumble,T10003D�50,Europe,T10003D
 ROYAL_RUMBLE,WWF Royal Rumble,T45101M���,Japan,T10003D
 ROYAL_RUMBLE,WWF Royal Rumble,T10005N���,USA,T10003D
+xenocrisis??,Xeno Crisis,BB-0001���,Unlicensed,
 EXTREMES.???,Sega Extreme Sports,MK-5108150,Europe,MK5108150
 EXTREMES.???,Sega Extreme Sports,HDR-0146��,Japan,MK5108150
 XTREMESP.???,Xtreme Sports,T15126N���,USA,T15126N
