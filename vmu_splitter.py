@@ -186,7 +186,7 @@ def find_game(file_name: str, file: VmuFile):
 
             search = input("Type a string to search for:\n")
             results = game_db.find_games(search)
-
+            # results.sort(key=sort_func)
             print(f"\n{len(results)} matches for \"{search}\":")
 
             if(len(results) == 0):
@@ -202,7 +202,7 @@ def find_game(file_name: str, file: VmuFile):
 
             selection = input("Select the matching game from the list above (Leave blank to abort):\n")
 
-            valid_response = int(selection)-1 in results if selection else True
+            valid_response = int(selection) <= len(results) if selection else True
             if (not valid_response):
                 print("Invalid response")
 
