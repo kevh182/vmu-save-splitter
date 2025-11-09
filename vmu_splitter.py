@@ -5,7 +5,6 @@ from dbs.save_db import SaveDb;
 from dbs.game_db import GameDb;
 import configparser
 import fnmatch
-import os
 from pathlib import Path
 import shutil
 
@@ -47,7 +46,7 @@ def empty_export_folder():
 
 def sort_func(e):
     if (e['region'] == "USA"):
-        return "1 "
+        return "1"
     if (e['region'] == "Japan"):
         return "2"
     if (e['region'] == "Europe"):
@@ -82,9 +81,10 @@ def match_game(matches, file_name):
              return matches[0]
 
     for region in regions:
-        for match in matches:
-            if match["region"] == region:
-                matched_game = match
+        if (not matched_game):
+            for match in matches:
+                if match["region"] == region:
+                    matched_game = match
 
     if (matched_game):
         return matched_game
@@ -108,13 +108,13 @@ def match_game(matches, file_name):
 
 def format_game_id(game_id: str):
     if (loader == "openMenu"):
-        if(game_id.find(" ") > -1):
-            return game_id[:game_id.find(" ")].replace("-","").replace(" ", "").strip()
+        if(game_id.find(" ") > -1):
+            return game_id[:game_id.find(" ")].replace("-","").replace(" ", "").strip()
     # if (loader == "MODE"):
-    #     if(game_id.rfind(" ") > -1):
-    #         return game_id[:game_id.rfind(" ")].replace("-","").replace(" ", "").strip()
+    #     if(game_id.rfind(" ") > -1):
+    #         return game_id[:game_id.rfind(" ")].replace("-","").replace(" ", "").strip()
         
-    return game_id.replace("-","").replace(" ", "").strip()
+    return game_id.replace("-","").replace(" ", "").strip()
 
 def split_files(vmu: Vmu):
     new_vmus = {}
