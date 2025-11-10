@@ -79,15 +79,19 @@ def match_game(matches, file_name):
               fmids.append(match["fmid"])
         if(len(set(fmids)) == 1):
              return matches[0]
+        
+    matched_games = []
 
     for region in regions:
-        if (not matched_game):
+        if (len(matched_games) == 0):
             for match in matches:
                 if match["region"] == region:
-                    matched_game = match
+                    matched_games.append(match)
 
-    if (matched_game):
-        return matched_game
+    if (len(matched_games) == 1):
+        return matched_games[0]
+    elif (len(matched_games) > 1):
+        matches = matched_games
     
     matches.sort(key=sort_func)
             
