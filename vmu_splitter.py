@@ -180,8 +180,11 @@ def split_files(vmu: Vmu):
 def find_game(file_name: str, file: VmuFile):
     print(f"File Data:")
     print(f"{file_name}")
-    print(f"{file.desc}")
-    print(f"{file.desc_long}")
+    if(file.is_valid):
+        print(f"{file.desc}")
+        print(f"{file.desc_long}")
+    else:
+        print(f"Unable to read file data")
     do_search = user_yes_no("Search for matching game?")
     if(do_search):
         try_again = True
@@ -235,4 +238,7 @@ vmuList = Path(import_dir).glob("**/*.[vV][mM][uUdD]")
 
 for vmu in vmuList:
     currentVmu = Vmu(str(vmu))
-    split_files(currentVmu)
+    try:
+        split_files(currentVmu)
+    except:
+        print(f"Error reading file {str(vmu)}")
