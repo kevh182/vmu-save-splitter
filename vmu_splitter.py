@@ -111,9 +111,9 @@ def match_game(matches, file_name):
     return matched_game
 
 def format_game_id(game_id: str):
-    if (loader == "openMenu"):
-        if(game_id.find(" ") > -1):
-            return game_id[:game_id.find(" ")].replace("-","").replace(" ", "").strip()
+    # if (loader == "openMenu"):
+    #     if(game_id.find(" ") > -1):
+    #         return game_id[:game_id.find(" ")].replace("-","").replace(" ", "").strip()
     # if (loader == "MODE"):
     #     if(game_id.rfind(" ") > -1):
     #         return game_id[:game_id.rfind(" ")].replace("-","").replace(" ", "").strip()
