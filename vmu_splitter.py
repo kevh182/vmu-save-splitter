@@ -25,10 +25,12 @@ if (not "Options" in config):
 if (not "loader" in config["Options"]):
      raise Exception("'loader' option missing from config.")
 
-empty = True if ("empty" in config["Options"] and config["Options"]["Empty"] == "1") else False
+empty = True if ("empty" in config["Options"] and config["Options"]["empty"] == "1") else False
 
 regions = config["Options"]["region"].split(",") if "region" in config["Options"] else []
 loader = config["Options"]["loader"]
+
+first_generic_number = int(config["Options"]["first_generic_number"]) if ("first_generic_number" in config["Options"] and config["Options"]["first_generic_number"]).isdigit() else None
 
 save_db = SaveDb()
 game_db = GameDb()
@@ -199,6 +201,31 @@ def format_game_id(game_id: str):
         
     return game_id.replace("-","").replace(" ", "").strip()
 
+def save_to_generic_vmu(file: VmuFile):
+    current_card_num = first_generic_number
+    saved = False
+
+    while(not saved):
+        file_dir = f"{export_dir}MemoryCard{current_card_num}"
+        if(not Path(file_dir).is_dir()):
+             Path(file_dir).mkdir()
+
+        file_path = f"{file_dir}/MemoryCard{current_card_num}-1.vmu"
+        is_file = Path(file_path).is_file()
+        vmu = Vmu(file_path) if is_file else Vmu("./blank.vmu")
+
+        try:
+            vmu.add_file(file)
+            vmu.save_vmu(file_path)
+            saved = True
+        except Exception as e:
+            msg = getattr(e, 'message', str(e))
+            if(msg == "Not enough space on VMU" or msg == "File already exists"):
+                current_card_num += 1
+            else:
+                print(e)
+                return
+
 def split_files(vmu: Vmu):
     new_vmus = {}
     matched_ids = []
@@ -243,6 +270,11 @@ def split_files(vmu: Vmu):
 
             new_vmu.add_file(current_file)
             new_vmus[game_id] = new_vmu
+        elif (first_generic_number != None and first_generic_number > 0):
+            save_to_generic = user_yes_no("Save to generic memory card?")
+            if(save_to_generic):
+                current_file = vmu.get_file(file.index)
+                save_to_generic_vmu(current_file)
     
     for game_id, new_vmu in new_vmus.items():
         game_dir = Path(export_dir + game_id)
@@ -321,5 +353,8 @@ for vmu in vmuList:
     currentVmu = Vmu(str(vmu))
     try:
         split_files(currentVmu)
+    except KeyboardInterrupt:
+        print("Aborted by user")
+        break
     except:
         print(f"Error reading file {str(vmu)}")
