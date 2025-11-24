@@ -110,6 +110,85 @@ def match_game(matches, file_name):
 
     return matched_game
 
+
+# Converts GameIDs for openMenu, based on information from the openMenu source code
+# located at https://github.com/megavolt85/openmenu
+def open_menu_serials(matched_game):
+    formatted_game_id = format_game_id(matched_game["game_id"])
+    # Fix Alone in the Dark (PAL) overlapping Alone in the Dark (USA)
+    if(formatted_game_id == "T15117N" and matched_game["region"] == "Europe"):
+        matched_game["game_id"] = "T15112D05"
+        return matched_game
+    
+    # Fix Crazy Taxi (PAL) overlapping Crazy Taxi (USA)
+    if(formatted_game_id == "MK51035" and matched_game["region"] == "Europe"):
+        matched_game["game_id"] = "MK5103550"
+        return matched_game
+    
+    # Fix Disney's Donald Duck: Goin' Quackers (USA) overlapping
+    # Disney's Donald Duck: Quack Attack (PAL)
+    if(formatted_game_id == "T17714D50" and matched_game["region"] == "USA"):
+        matched_game["game_id"] = "T17719N"
+        return matched_game
+    
+    # Fix Floigan Bros (PAL) overlapping Floigan Bros (USA)
+    if(formatted_game_id == "MK51114" and matched_game["region"] == "Europe"):
+        matched_game["game_id"] = "MK5111450"
+        return matched_game
+    
+    # Fix Legacy of Kain: Soul Reaver (PAL) overlapping
+    # Legacy of Kain: Soul Reaver (USA)
+    if(formatted_game_id == "T36802N" and matched_game["region"] == "Europe"):
+        matched_game["game_id"] = "T36803D05"
+        return matched_game
+    
+    # Fix NBA2K2 (PAL) overlapping NBA2K2 (USA)
+    if(formatted_game_id == "MK51178" and matched_game["region"] == "Europe"):
+        matched_game["game_id"] = "MK5117850"
+        return matched_game
+    
+    # Fix NBA Showtime (PAL) overlapping 4 Wheel Thunder (PAL)
+    if(formatted_game_id == "T9706D50" and matched_game["title"] == "NBA Showtime: NBA on NBC"):
+        matched_game["game_id"] = "T9705D50"
+        return matched_game
+    
+    # Fix Nightmare Creatures II (USA) overlapping Dancing Blade 2 (JAP)
+    if(formatted_game_id == "T9504M" and matched_game["region"] == "USA"):
+        matched_game["game_id"] = "T9504N"
+        return matched_game
+    
+    # Fix Plasma Sword (PAL) overlapping Street Fighter Alpha 3 (PAL)
+    if(formatted_game_id == "T7005D50" and matched_game["title"] == "Plasma Sword: Nightmare of Bilstein"):
+        matched_game["game_id"] = "T7003D"
+        return matched_game
+    
+    # Fix Skies of Arcadia (PAL) overlapping Skies of Arcadia (USA)
+    if(formatted_game_id == "MK51052" and matched_game["region"] == "Europe"):
+        matched_game["game_id"] = "MK5105250"
+        return matched_game
+    
+    # Fix Spider-Man (PAL) overlapping Spider-Man (USA)
+    if(formatted_game_id == "T13008N" and matched_game["region"] != "USA"):
+        matched_game["game_id"] = "T13011D50"
+        return matched_game
+    
+    # Fix TNN Motorsports (USA) overlapping Metal Slug 6 (AW)
+    if(formatted_game_id == "T0000M" and matched_game["title"] == "TNN Motorsports Hardcore Heat"):
+        matched_game["game_id"] = "T13701N"
+        return matched_game
+    
+    # Fix Maximum Speed (AW) overlapping Dolphin Blue (AW)
+    if(formatted_game_id == "T0006M" and matched_game["title"] == "Maximum Speed"):
+        matched_game["game_id"] = "T0010M"
+        return matched_game
+    
+    # Fix Fist of North Star (AW) overlapping Rumble Fish (AW)
+    if(formatted_game_id == "T0009M" and matched_game["title"] == "Fist of the North Star"):
+        matched_game["game_id"] = "T0026M"
+        return matched_game
+
+    return matched_game
+
 def format_game_id(game_id: str):
     # if (loader == "openMenu"):
     #     if(game_id.find(" ") > -1):
@@ -154,6 +233,8 @@ def split_files(vmu: Vmu):
             matched_game = matched_game if matched_game else match_game(matches, file.file_name)
 
         if (matched_game):
+            if (loader == "openMenu"):
+                matched_game = open_menu_serials(matched_game)
             matched_ids.append(matched_game["game_id"])
             game_id = matched_game["fmid"] if loader == "disc" else format_game_id(matched_game["game_id"])
             print(f'Matched {matched_game["title"]} ({matched_game["region"]}): {game_id}')
